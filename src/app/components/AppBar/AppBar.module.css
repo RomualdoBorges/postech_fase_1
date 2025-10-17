@@ -1,6 +1,7 @@
 .header {
   background-color: var(--color-primary);
   padding: 28px 0;
+  position: relative;
 }
 
 .container {
@@ -32,6 +33,27 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--background-primary);
+  padding: 23px;
+  width: 172px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav button {
+  align-self: flex-end;
+}
+
+.nav svg {
+  color: var(--color-secondary);
 }
 
 @media (max-width: 360px) {
