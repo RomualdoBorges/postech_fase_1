@@ -1,0 +1,45 @@
+.header {
+  background-color: var(--color-primary);
+  padding: 28px 0;
+}
+
+.container {
+  max-width: 1168px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+}
+
+.container button {
+  color: var(--color-tertiary);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.container p {
+  color: var(--color-white);
+}
+
+.menu {
+  display: none !important;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 360px) {
+  .menu {
+    display: inline-flex !important;
+  }
+
+  .container p {
+    display: none !important;
+  }
+}
