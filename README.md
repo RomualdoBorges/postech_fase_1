@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BYTEBANK - Postech FIAP - Fase 1
 
-## Getting Started
+O ByteBank é um sistema bancário simples desenvolvido para simular operações financeiras essenciais de uma conta digital. Ele permite realizar visualizar saldo da conta corrente e informações sobre transações (extrato, e novas transações).
 
-First, run the development server:
+---
+
+## 🚀 Tecnologias Utilizadas
+
+### Framework Principal
+
+- **Next 15.5.6** - Framework React com suporte a SSR, rotas e build otimizado
+- **React 19** – Biblioteca JavaScript para construção de interfaces
+
+### Interface e Estilo
+
+- **Material UI (MUI 7)** - Componentes prontos e responsivos com design profissional
+- **Emotion** - Estilização CSS-in-JS integrada ao MUI
+- **TailwindCSS 4** - Estilos utilitários para agilidade no desenvolvimento
+
+### Tipagem e Qualidade
+
+- **TypeScript 5** - Tipagem estática para maior segurança e produtividade
+- **ESLint 9 + Prettier 3** - Linter e Formatador para manter um código limpo e padronizado
+
+### Estado Global
+
+- **Context API** – Gerenciamento de estado global com React nativo
+
+### Roteamento
+
+- **Next.js Router** – Navegação otimizada e suporte a rotas dinâmicas
+
+### Ícones
+
+- **Material UI Icons** – Biblioteca de ícones prontos para React
+
+---
+
+## ⚙️ Instalação
+
+### Pré-requisitos
+
+- Node.js **18+**
+- npm ou yarn
+
+### Passos de Instalação
+
+1. Clone o repositório e entre na pasta:
+
+```bash
+git clone https://github.com/RomualdoBorges/postech_fase_1.git
+cd cine-frontend
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Execute o projeto em modo de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Acesse o projeto no navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts Disponíveis
 
-## Learn More
+- `npm run dev` - Inicia o servidor de desenvolvimento na porta 3000
+- `npm run build` - Gera a build de produção
+- `npm run start` - Executa a aplicação em modo produção
+- `npm run lint` - Executa o ESLint para verificar o código
 
-To learn more about Next.js, take a look at the following resources:
+## Ambiente de Produção
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Para build de produção:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Os arquivos otimizados serão gerados na pasta `.next/`, prontos para deploy.
