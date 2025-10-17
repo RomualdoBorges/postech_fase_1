@@ -1,0 +1,28 @@
+:root {
+  /* Cores */
+  --color-primary: #004d61;
+  --color-secondary: #47a138;
+  --color-tertiary: #ff5031;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --background-primary: #e4ede3;
+  --background-secondary: #cbcbcb;
+  /* Tipografia */
+  --font-size-xs: 0.812rem;
+  --font-size-sm: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.562rem;
+  /* Espaçamentos */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-lg: 24px;
+}
+
+body {
+  background-color: var(--background-primary);
+}
+
+html,
+body {
+  font-family: var(--font-inter), sans-serif;
+}
