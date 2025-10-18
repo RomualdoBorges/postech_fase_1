@@ -22,6 +22,10 @@ O ByteBank é um sistema bancário simples desenvolvido para simular operações
 - **TypeScript 5** - Tipagem estática para maior segurança e produtividade
 - **ESLint 9 + Prettier 3** - Linter e Formatador para manter um código limpo e padronizado
 
+### Formulários e Validação
+
+- **React Hook Form 7** - Manipulação simples e performática de formulários
+
 ### Estado Global
 
 - **Context API** – Gerenciamento de estado global com React nativo
