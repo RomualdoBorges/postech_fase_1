@@ -20,7 +20,7 @@ const NewTransaction: React.FC = () => {
       />
 
       <Image
-        src="/Ilustração2.svg"
+        src="/ilustracao2.svg"
         alt="Padrão decorativo meio"
         width={283}
         height={228}

@@ -27,14 +27,6 @@
 }
 
 @media (max-width: 720px) {
-  .visibility {
-    border-color: var(--color-white);
-  }
-
-  .visibility svg {
-    color: var(--color-white);
-  }
-
   .imagePig {
     display: block;
   }
@@ -46,20 +38,11 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .container {
     padding-bottom: 300px;
     padding-right: 24px;
-  }
-
-  .balanceContainer,
-  .title {
-    align-self: center;
-    width: 100%;
-  }
-
-  .title p {
-    margin-bottom: 40px;
+    padding: 32px 16px 300px 16px;
   }
 
   .bottomImage {
@@ -71,5 +54,9 @@
 
   .topImage {
     display: none;
+  }
+
+  .imagePig {
+    right: 14.5px;
   }
 }

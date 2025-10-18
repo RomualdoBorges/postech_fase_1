@@ -3,7 +3,7 @@
   z-index: 1000;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 450px) {
   .inputSelect {
     width: 280px;
   }

@@ -12,7 +12,7 @@ import BankStatementList, {
 import { useMediaQuery } from "@mui/material";
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:879px)");
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   const bankStatementData: BankStatementData[] = [
     { id: 0, date: "2022-10-18", type: "Depósito", value: 150 },
