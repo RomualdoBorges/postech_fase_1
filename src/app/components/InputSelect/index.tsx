@@ -31,12 +31,11 @@ const InputSelect: React.FC<InputSelectProps> = ({
 }) => {
   return (
     <FormControl
-      fullWidth
       sx={{
-        marginTop: "24px",
         "& .MuiInputLabel-root.Mui-focused": {
           color: "#2E7D32",
         },
+        width: "335px",
       }}
     >
       <InputLabel

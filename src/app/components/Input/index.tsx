@@ -22,13 +22,12 @@ const Input: React.FC<InputProps> = ({
     <TextField
       id={id}
       variant="outlined"
-      fullWidth
       type={type}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
       sx={{
-        marginTop: "24px",
+        width: "250px",
         backgroundColor: "#FFFFFF",
         borderRadius: "8px",
         "& .MuiOutlinedInput-root": {
