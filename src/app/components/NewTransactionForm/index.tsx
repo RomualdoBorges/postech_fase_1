@@ -37,6 +37,7 @@ const NewTransactionForm: React.FC = () => {
           fontWeight: 700,
           color: "#dee9ea",
           marginBottom: "35px",
+          zIndex: 1000,
         }}
       >
         Nova Transação
@@ -129,8 +130,9 @@ const NewTransactionForm: React.FC = () => {
       <Button
         type="submit"
         sx={{
+          zIndex: 1000,
           padding: "16px 39px",
-          width: "250px",
+          width: "280px",
           backgroundColor: "var(--color-primary)",
           color: "white",
           borderRadius: "8px",

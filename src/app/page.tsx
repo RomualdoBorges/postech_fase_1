@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import NewTransaction from "./components/NewTransaction";
 // import NewTransactionForm from "./components/NewTransactionForm";
 // import Menu from "./components/Menu";
 // import { nav } from "./utils/navData";
@@ -24,6 +25,7 @@ export default function Home() {
       {/* <BankStatementList data={bankStatementData} /> */}
 
       {/* <NewTransactionForm /> */}
+      <NewTransaction />
     </div>
   );
 }

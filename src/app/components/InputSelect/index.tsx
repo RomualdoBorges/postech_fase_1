@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./InputSelect.module.css";
 import {
   FormControl,
   InputLabel,
@@ -35,8 +36,8 @@ const InputSelect: React.FC<InputSelectProps> = ({
         "& .MuiInputLabel-root.Mui-focused": {
           color: "#2E7D32",
         },
-        width: "335px",
       }}
+      className={styles.inputSelect}
     >
       <InputLabel
         id={labelId}
