@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Balance.module.css";
-import { Box, IconButton, Typography } from "@mui/material";
+import { IconButton } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { getFormattedDate } from "@/app/utils/getFormattedDate";
@@ -17,24 +17,24 @@ const Balance: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Box className={styles.title}>
-        <Typography>Olá, Joana! :)</Typography>
-        <Typography>{getFormattedDate()}</Typography>
-      </Box>
+      <div className={styles.title}>
+        <p>Olá, Joana! :)</p>
+        <p>{getFormattedDate()}</p>
+      </div>
 
-      <Box className={styles.balanceContainer}>
-        <Box className={styles.visibility}>
-          <Typography>Saldo</Typography>
+      <div className={styles.balanceContainer}>
+        <div className={styles.visibility}>
+          <p>Saldo</p>
           <IconButton size="small" onClick={handleClick}>
             {visibility ? <VisibilityIcon /> : <VisibilityOffIcon />}
           </IconButton>
-        </Box>
+        </div>
 
-        <Box className={styles.balance}>
-          <Typography>Conta Corrente</Typography>
-          <Typography>{`R$ ${visibility ? "2.500,00" : "***"}`}</Typography>
-        </Box>
-      </Box>
+        <div className={styles.balance}>
+          <p>Conta Corrente</p>
+          <p>{`R$ ${visibility ? "2.500,00" : "***"}`}</p>
+        </div>
+      </div>
 
       <Image
         src="/Pixels2.svg"

@@ -2,7 +2,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import InputSelect from "../InputSelect";
 import Input from "../Input";
-import { Button, Typography, type SelectChangeEvent } from "@mui/material";
+import { Button, type SelectChangeEvent } from "@mui/material";
 
 type FormValues = {
   type: number | "";
@@ -31,8 +31,8 @@ const NewTransactionForm: React.FC = () => {
         display: "grid",
       }}
     >
-      <Typography
-        sx={{
+      <p
+        style={{
           fontSize: "25px",
           fontWeight: 700,
           color: "#dee9ea",
@@ -41,7 +41,7 @@ const NewTransactionForm: React.FC = () => {
         }}
       >
         Nova Transação
-      </Typography>
+      </p>
 
       <Controller
         name="type"
@@ -69,8 +69,8 @@ const NewTransactionForm: React.FC = () => {
         )}
       />
 
-      <Typography
-        sx={{
+      <p
+        style={{
           fontSize: "16px",
           fontWeight: 600,
           color: "#dee9ea",
@@ -78,7 +78,7 @@ const NewTransactionForm: React.FC = () => {
         }}
       >
         Valor
-      </Typography>
+      </p>
 
       <Controller
         name="value"
@@ -102,8 +102,8 @@ const NewTransactionForm: React.FC = () => {
         )}
       />
 
-      <Typography
-        sx={{
+      <p
+        style={{
           fontSize: "16px",
           fontWeight: 600,
           color: "#dee9ea",
@@ -111,7 +111,7 @@ const NewTransactionForm: React.FC = () => {
         }}
       >
         Data
-      </Typography>
+      </p>
 
       <Controller
         name="date"
