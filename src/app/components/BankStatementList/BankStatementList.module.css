@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  background-color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-secondary);
+  padding-bottom: 8px;
+}
+
+.month {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 100%;
+  color: var(--color-secondary);
+}
+
+.typeDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.typeDate p:first-child {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--color-black);
+}
+
+.typeDate p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #8b8b8b;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  color: var(--color-black);
+}

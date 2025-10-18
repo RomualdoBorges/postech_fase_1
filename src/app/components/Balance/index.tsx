@@ -16,7 +16,7 @@ const Balance: React.FC = () => {
   }
 
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <Box className={styles.title}>
         <Typography>Olá, Joana! :)</Typography>
         <Typography>{getFormattedDate()}</Typography>
@@ -62,7 +62,7 @@ const Balance: React.FC = () => {
         priority
         className={styles.bottomImage}
       />
-    </section>
+    </div>
   );
 };
 
