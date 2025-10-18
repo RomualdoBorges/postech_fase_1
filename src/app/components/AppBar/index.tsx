@@ -35,7 +35,7 @@ const AppBar: React.FC = () => {
 
       {open && (
         <Box className={styles.nav}>
-          <IconButton onClick={() => setOpen(!open)}>
+          <IconButton onClick={handleClick}>
             <CloseIcon />
           </IconButton>
           <Menu orientation="vertical" navData={nav} />
