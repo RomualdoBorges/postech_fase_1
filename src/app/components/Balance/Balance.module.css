@@ -1,0 +1,126 @@
+.container {
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 24px 103px 187px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomImage,
+.topImage,
+.imagePig {
+  display: none;
+}
+
+.title p {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.title p:first-child {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.balanceContainer {
+  align-self: flex-end;
+}
+
+.visibility {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid var(--color-tertiary);
+  padding-bottom: 16px;
+}
+
+.visibility p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.visibility svg {
+  color: var(--color-tertiary);
+}
+
+.balance p:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.balance p:last-child {
+  font-weight: 400;
+  font-size: 31px;
+  margin-top: 6px;
+  min-width: 172.11px;
+}
+
+@media (max-width: 720px) {
+  .visibility {
+    border-color: var(--color-white);
+  }
+
+  .visibility svg {
+    color: var(--color-white);
+  }
+
+  .bottomImage,
+  .topImage,
+  .imagePig {
+    display: block;
+  }
+
+  .bottomImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .topImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  .imagePig {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-bottom: 300px;
+    padding-right: 24px;
+  }
+
+  .balanceContainer,
+  .title {
+    align-self: center;
+    width: 100%;
+  }
+
+  .title p {
+    margin-bottom: 40px;
+  }
+
+  .bottomImage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+
+  .topImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+  }
+}
