@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./styles/not-found.module.css";
+import Button from "./components/Button";
 
 export default function NotFound() {
   return (
@@ -12,8 +13,8 @@ export default function NotFound() {
           <p>Que tal voltar e tentar novamente?</p>
         </div>
 
-        <Link href="/" className={styles.link}>
-          Voltar ao início
+        <Link href="/">
+          <Button>Voltar ao início</Button>
         </Link>
       </div>
 
