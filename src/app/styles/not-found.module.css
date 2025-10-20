@@ -6,41 +6,23 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: var(--spacing-xl);
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .title {
-  font-size: 25px;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-lg);
   line-height: 120%;
 }
 
 .description {
-  font-size: 16px;
+  font-size: var(--font-size-sm);
   line-height: 120%;
-}
-
-.link {
-  width: fit-content;
-  align-self: center;
-  background: red;
-  color: #fff;
-  padding: 14px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 120%;
-  transition: filter 0.2s ease;
-}
-
-.link:hover {
-  background-color: black;
 }

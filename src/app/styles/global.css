@@ -7,15 +7,29 @@
   --color-white: #ffffff;
   --background-primary: #e4ede3;
   --background-secondary: #cbcbcb;
+
   /* Tipografia */
-  --font-size-xs: 0.812rem;
-  --font-size-sm: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 1.562rem;
+  --font-size-xs: 13px;
+  --font-size-sm: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 25px;
+  --font-size-xxl: 30px;
+
+  --font-weight-xs: 400;
+  --font-weight-sm: 600;
+  --font-weight-lg: 700;
+
   /* Espaçamentos */
+  --spacing-xxs: 4px;
   --spacing-xs: 8px;
-  --spacing-sm: 16px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
   --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* border  */
+  --border-radius: 8px;
 }
 
 body {

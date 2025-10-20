@@ -1,22 +1,21 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--spacing-lg);
   width: 100%;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--spacing-xs);
   border-bottom: 1px solid var(--color-secondary);
-  padding-bottom: 8px;
+  padding-bottom: var(--spacing-xs);
 }
 
 .month {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 100%;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-sm);
   color: var(--color-secondary);
 }
 
@@ -27,22 +26,19 @@
 }
 
 .typeDate p:first-child {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 100%;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-xs);
   color: var(--color-black);
 }
 
 .typeDate p {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 100%;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-xs);
   color: #8b8b8b;
 }
 
 .value {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 100%;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
   color: var(--color-black);
 }

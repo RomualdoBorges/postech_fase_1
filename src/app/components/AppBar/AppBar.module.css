@@ -1,24 +1,21 @@
 .header {
   background-color: var(--color-primary);
-  padding: 28px 0;
+  padding: var(--spacing-lg) 0;
   position: relative;
 }
 
 .container {
-  max-width: 1168px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--spacing-lg);
 }
 
 .container button {
   color: var(--color-tertiary);
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  font-weight: var(--font-weight-sm);
+  font-size: var(--font-size-xs);
 }
 
 .container p {
@@ -32,7 +29,7 @@
 .user {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--spacing-xs);
 }
 
 .nav {
@@ -42,7 +39,7 @@
   right: 0;
   z-index: 2000;
   background-color: var(--background-primary);
-  padding: 23px;
+  padding: var(--spacing-lg);
   width: 172px;
   display: flex;
   flex-direction: column;
@@ -56,12 +53,28 @@
   color: var(--color-secondary);
 }
 
+@media (max-width: 900px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
 @media (max-width: 600px) {
+  .container {
+    max-width: 500px;
+  }
+
   .menu {
     display: inline-flex !important;
   }
 
   .container p {
     display: none !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    max-width: 312px;
   }
 }

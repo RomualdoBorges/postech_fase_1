@@ -1,5 +1,5 @@
 .nav {
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 .nav ul {
@@ -24,7 +24,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: var(--spacing-md);
   text-align: center;
 }
 
@@ -35,10 +35,10 @@
 .nav ul li a {
   display: block;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: var(--font-weight-lg);
+  font-size: var(--font-size-sm);
   line-height: 100%;
-  padding: 16px 0;
+  padding: var(--spacing-md) 0;
 }
 
 .nav ul li a:hover {

@@ -1,9 +1,9 @@
 .container {
   position: relative;
-  background-color: #cbcbcb;
+  background-color: var(--background-secondary);
   color: var(--color-white);
-  border-radius: 8px;
-  padding: 32px 32px 141px 32px;
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl) var(--spacing-xl) 141px var(--spacing-xl);
   display: flex;
   flex-direction: column;
 }
@@ -33,16 +33,16 @@
 
   .imagePig {
     position: absolute;
-    bottom: 24px;
-    right: 24px;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
   }
 }
 
 @media (max-width: 450px) {
   .container {
     padding-bottom: 300px;
-    padding-right: 24px;
-    padding: 32px 16px 300px 16px;
+    padding-right: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-md) 300px var(--spacing-md);
   }
 
   .bottomImage {
