@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./NewTransactionForm.module.css";
 import { Controller, useForm } from "react-hook-form";
 import InputSelect from "../InputSelect";
 import Input from "../Input";
@@ -25,23 +26,8 @@ const NewTransactionForm: React.FC = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{
-        display: "grid",
-      }}
-    >
-      <p
-        style={{
-          fontSize: "25px",
-          fontWeight: 700,
-          color: "#dee9ea",
-          marginBottom: "35px",
-          zIndex: 1000,
-        }}
-      >
-        Nova Transação
-      </p>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.containerForm}>
+      <p className={styles.title}>Nova Transação</p>
 
       <Controller
         name="type"
@@ -69,16 +55,7 @@ const NewTransactionForm: React.FC = () => {
         )}
       />
 
-      <p
-        style={{
-          fontSize: "16px",
-          fontWeight: 600,
-          color: "#dee9ea",
-          margin: "32px 0 16px 0",
-        }}
-      >
-        Valor
-      </p>
+      <p className={styles.description}>Valor</p>
 
       <Controller
         name="value"
@@ -102,16 +79,7 @@ const NewTransactionForm: React.FC = () => {
         )}
       />
 
-      <p
-        style={{
-          fontSize: "16px",
-          fontWeight: 600,
-          color: "#dee9ea",
-          margin: "32px 0 16px 0",
-        }}
-      >
-        Data
-      </p>
+      <p className={styles.description}>Data</p>
 
       <Controller
         name="date"
@@ -129,6 +97,7 @@ const NewTransactionForm: React.FC = () => {
 
       <Button
         type="submit"
+        className={styles.button}
         sx={{
           zIndex: 1000,
           padding: "16px 39px",

@@ -1,0 +1,18 @@
+.containerForm {
+  display: grid;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+  color: #dee9ea;
+  margin-bottom: 35px;
+  z-index: 1000;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 600;
+  color: #dee9ea;
+  margin: 32px 0 16px 0;
+}
