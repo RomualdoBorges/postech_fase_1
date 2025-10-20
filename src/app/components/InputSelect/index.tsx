@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./InputSelect.module.css";
 import {
   FormControl,
+  FormHelperText,
   InputLabel,
   MenuItem,
   Select,
@@ -20,6 +21,8 @@ interface InputSelectProps {
   value: string | number | "";
   onChange: (event: SelectChangeEvent<string | number>) => void;
   options: Option[];
+  error?: boolean;
+  helperText?: string;
 }
 
 const InputSelect: React.FC<InputSelectProps> = ({
@@ -29,6 +32,8 @@ const InputSelect: React.FC<InputSelectProps> = ({
   value,
   onChange,
   options,
+  error = false,
+  helperText = "",
 }) => {
   return (
     <FormControl
@@ -38,6 +43,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
         },
       }}
       className={styles.inputSelect}
+      error={error}
     >
       <InputLabel
         id={labelId}
@@ -64,7 +70,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
             borderColor: "#2E7D32",
           },
           "& .MuiSelect-icon": {
-            color: "#4CAF50",
+            color: error ? "#d32f2f" : "#4CAF50",
           },
           borderRadius: "8px",
         }}
@@ -89,6 +95,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
           </MenuItem>
         ))}
       </Select>
+      <FormHelperText>{helperText}</FormHelperText>
     </FormControl>
   );
 };

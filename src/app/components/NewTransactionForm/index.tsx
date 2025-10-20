@@ -1,24 +1,51 @@
 import React from "react";
 import styles from "./NewTransactionForm.module.css";
 import { Controller, useForm } from "react-hook-form";
+import * as yup from "yup";
 import InputSelect from "../InputSelect";
 import Input from "../Input";
 import Button from "../Button";
 import { type SelectChangeEvent } from "@mui/material";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-type FormValues = {
-  type: number | "";
-  value: number | "";
-  date: string | "";
-};
+// type FormValues = {
+//   type: number | "";
+//   value: number | "";
+//   date: string | "";
+// };
+
+const schema = yup.object({
+  type: yup
+    .number()
+    .oneOf([1, 2, 3], "Selecione um tipo válido")
+    .required("Tipo é obrigatório"),
+  value: yup
+    .number()
+    .typeError("Informe um número")
+    .positive("Valor deve ser maior que zero")
+    .required("Valor é obrigatório"),
+  date: yup.string().required("Data é obrigatória"),
+});
+
+type FormValues = yup.InferType<typeof schema>;
+
+const todayISO = new Date().toISOString().split("T")[0];
 
 const NewTransactionForm: React.FC = () => {
-  const { control, handleSubmit, reset } = useForm<FormValues>({
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     defaultValues: {
-      type: "",
-      value: "",
-      date: new Date().toISOString().split("T")[0],
+      type: undefined,
+      value: undefined,
+      date: todayISO,
     },
+    resolver: yupResolver(schema),
+    mode: "onSubmit",
+    reValidateMode: "onChange",
   });
 
   const onSubmit = (data: FormValues) => {
@@ -52,6 +79,8 @@ const NewTransactionForm: React.FC = () => {
               { label: "Transferência", value: 2 },
               { label: "Pagamento", value: 3 },
             ]}
+            error={!!errors.type}
+            helperText={errors.type?.message}
           />
         )}
       />
@@ -76,6 +105,8 @@ const NewTransactionForm: React.FC = () => {
               field.onChange(Number.isNaN(n) ? "" : n);
             }}
             placeholder="00,00"
+            error={!!errors.value}
+            helperText={errors.value?.message}
           />
         )}
       />
@@ -92,6 +123,8 @@ const NewTransactionForm: React.FC = () => {
             value={typeof field.value === "string" ? field.value : ""}
             onChange={(e) => field.onChange(e.target.value)}
             placeholder="YYYY-MM-DD"
+            error={!!errors.date}
+            helperText={errors.date?.message}
           />
         )}
       />
