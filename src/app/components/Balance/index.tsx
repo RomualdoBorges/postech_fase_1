@@ -8,8 +8,44 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { getFormattedDate } from "@/app/utils/getFormattedDate";
 import Image from "next/image";
 
+export type ImageData = {
+  id: number;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className: string;
+};
+
 const Balance: React.FC = () => {
   const [visibility, setVisibility] = React.useState<boolean>(true);
+
+  const imageListBalance: ImageData[] = [
+    {
+      id: 0,
+      src: "/Pixels2.svg",
+      alt: "Padrão decorativo topo",
+      width: 180,
+      height: 177,
+      className: styles.topImage,
+    },
+    {
+      id: 1,
+      src: "/balance-image.svg",
+      alt: "Padrão decorativo Porquinho",
+      width: 283,
+      height: 228,
+      className: styles.imagePig,
+    },
+    {
+      id: 2,
+      src: "/Pixels2.svg",
+      alt: "Padrão decorativo baixo",
+      width: 180,
+      height: 177,
+      className: styles.bottomImage,
+    },
+  ];
 
   function handleClick() {
     setVisibility(!visibility);
@@ -36,32 +72,17 @@ const Balance: React.FC = () => {
         </div>
       </div>
 
-      <Image
-        src="/Pixels2.svg"
-        alt="Padrão decorativo"
-        width={180}
-        height={177}
-        priority
-        className={styles.topImage}
-      />
-
-      <Image
-        src="/balance-image.svg"
-        alt="Logo do ByteBank"
-        width={283}
-        height={228}
-        priority
-        className={styles.imagePig}
-      />
-
-      <Image
-        src="/Pixels2.svg"
-        alt="Logo do ByteBank"
-        width={180}
-        height={177}
-        priority
-        className={styles.bottomImage}
-      />
+      {imageListBalance.map((item) => (
+        <Image
+          key={item.id}
+          src={item.src}
+          alt={item.alt}
+          width={item.width}
+          height={item.height}
+          priority
+          className={item.className}
+        />
+      ))}
     </div>
   );
 };
