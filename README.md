@@ -25,6 +25,8 @@ O ByteBank é um sistema bancário simples desenvolvido para simular operações
 ### Formulários e Validação
 
 - **React Hook Form 7** - Manipulação simples e performática de formulários
+- **yup 1.7.1** - Biblioteca de schema validation usada para definir e validar regras de dados de forma declarativa
+- **@hookform/resolvers** - Integração entre React Hook Form e Yup, permitindo validação automática baseada em schemas
 
 ### Estado Global
 
