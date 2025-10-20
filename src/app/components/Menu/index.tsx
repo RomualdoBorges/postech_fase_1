@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styles from "./Menu.module.css";
 import { useMediaQuery } from "@mui/material";
+import styles from "./Menu.module.css";
 
 export type navData = {
   id: number;
@@ -17,7 +17,7 @@ interface MenuProps {
   navData: navData[];
 }
 
-const Menu: React.FC<MenuProps> = ({ navData, orientation = "vertical" }) => {
+const Menu: React.FC<MenuProps> = ({ navData, orientation }) => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width:900px)");
   const effectiveOrientation =
