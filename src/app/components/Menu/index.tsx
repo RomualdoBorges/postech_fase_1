@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Menu.module.css";
+import { useMediaQuery } from "@mui/material";
 
 export type navData = {
   id: number;
@@ -12,16 +13,22 @@ export type navData = {
 };
 
 interface MenuProps {
-  orientation: "horizontal" | "vertical";
+  orientation?: "horizontal" | "vertical";
   navData: navData[];
 }
 
 const Menu: React.FC<MenuProps> = ({ navData, orientation = "vertical" }) => {
   const pathname = usePathname();
+  const isMobile = useMediaQuery("(max-width:900px)");
+  const effectiveOrientation =
+    orientation ?? (isMobile ? "horizontal" : "vertical");
+
   return (
     <nav
       className={`${styles.nav} ${
-        orientation === "horizontal" ? styles.horizontal : styles.vertical
+        effectiveOrientation === "horizontal"
+          ? styles.horizontal
+          : styles.vertical
       }`}
     >
       <ul>

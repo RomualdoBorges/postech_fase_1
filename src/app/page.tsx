@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import styles from "./styles/page.module.css";
 import NewTransaction from "./components/NewTransaction";
@@ -9,11 +7,8 @@ import Balance from "./components/Balance";
 import BankStatementList, {
   BankStatementData,
 } from "./components/BankStatementList";
-import { useMediaQuery } from "@mui/material";
 
 export default function Home() {
-  const isMobile = useMediaQuery("(max-width:900px)");
-
   const bankStatementData: BankStatementData[] = [
     { id: 0, date: "2022-10-18", type: "Depósito", value: 150 },
     { id: 1, date: "2022-11-21", type: "Depósito", value: 100 },
@@ -24,10 +19,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <section className={styles.menu}>
-        <Menu
-          orientation={isMobile ? "horizontal" : "vertical"}
-          navData={nav}
-        />
+        <Menu navData={nav} />
       </section>
 
       <section className={styles.cardsCenter}>

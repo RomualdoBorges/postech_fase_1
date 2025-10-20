@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./NewTransactionForm.module.css";
 import { Controller, useForm } from "react-hook-form";
@@ -7,12 +9,6 @@ import Input from "../Input";
 import Button from "../Button";
 import { type SelectChangeEvent } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-// type FormValues = {
-//   type: number | "";
-//   value: number | "";
-//   date: string | "";
-// };
 
 const schema = yup.object({
   type: yup
