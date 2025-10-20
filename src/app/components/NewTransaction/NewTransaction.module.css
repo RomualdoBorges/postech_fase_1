@@ -26,7 +26,7 @@
   z-index: 900;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .imagePig {
     display: block;
   }

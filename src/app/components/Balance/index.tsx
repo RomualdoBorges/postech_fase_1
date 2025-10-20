@@ -8,7 +8,7 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { getFormattedDate } from "@/app/utils/getFormattedDate";
 import Image from "next/image";
 
-export type ImageData = {
+type ImageData = {
   id: number;
   src: string;
   alt: string;
