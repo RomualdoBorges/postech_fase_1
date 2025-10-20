@@ -3,7 +3,8 @@ import styles from "./NewTransactionForm.module.css";
 import { Controller, useForm } from "react-hook-form";
 import InputSelect from "../InputSelect";
 import Input from "../Input";
-import { Button, type SelectChangeEvent } from "@mui/material";
+import Button from "../Button";
+import { type SelectChangeEvent } from "@mui/material";
 
 type FormValues = {
   type: number | "";
@@ -95,24 +96,8 @@ const NewTransactionForm: React.FC = () => {
         )}
       />
 
-      <Button
-        type="submit"
-        className={styles.button}
-        sx={{
-          zIndex: 1000,
-          padding: "16px 39px",
-          width: "280px",
-          backgroundColor: "var(--color-primary)",
-          color: "white",
-          borderRadius: "8px",
-          textTransform: "capitalize",
-          marginTop: "32px",
-          "&:hover": {
-            backgroundColor: "var(--color-tertiary)",
-          },
-        }}
-      >
-        Concluir transação
+      <Button style={{ width: "280px", marginTop: "32px" }} type="submit">
+        concluir transação
       </Button>
     </form>
   );

@@ -1,0 +1,16 @@
+.button {
+  z-index: 1000;
+  padding: 16px 39px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 8px;
+  text-transform: capitalize;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: var(--color-tertiary);
+  cursor: pointer;
+}
