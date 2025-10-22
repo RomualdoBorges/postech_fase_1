@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./Balance.module.css";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { getFormattedDate } from "@/app/utils/getFormattedDate";
@@ -61,9 +61,14 @@ const Balance: React.FC = () => {
       <div className={styles.balanceContainer}>
         <div className={styles.visibility}>
           <p>Saldo</p>
-          <IconButton size="small" onClick={handleClick}>
-            {visibility ? <VisibilityIcon /> : <VisibilityOffIcon />}
-          </IconButton>
+          <Tooltip
+            title={visibility ? "Esconder saldo" : "Mostrar Saldo"}
+            placement="right"
+          >
+            <IconButton size="small" onClick={handleClick}>
+              {visibility ? <VisibilityIcon /> : <VisibilityOffIcon />}
+            </IconButton>
+          </Tooltip>
         </div>
 
         <div className={styles.balance}>
