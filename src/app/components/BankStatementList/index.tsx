@@ -7,28 +7,9 @@ import ActionButtons, { ButtonsData } from "../ActionButtons";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
-import {
-  Box,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Modal,
-} from "@mui/material";
+import { Modal } from "@mui/material";
 import NewTransactionForm from "../NewTransactionForm";
 import Button from "../Button";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "var(--background-secondary)",
-  boxShadow: 24,
-  p: 4,
-};
 
 export type BankStatementData = {
   id: number;
@@ -115,9 +96,9 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
         aria-labelledby="modal-modal-new"
         aria-describedby="modal-modal-new-transaction"
       >
-        <Box sx={style}>
+        <div className={styles.modal}>
           <NewTransactionForm />
-        </Box>
+        </div>
       </Modal>
 
       <Modal
@@ -126,32 +107,41 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
         aria-labelledby="modal-modal-edit"
         aria-describedby="modal-modal-edit-transaction"
       >
-        <Box sx={style}>
+        <div className={styles.modal}>
           <NewTransactionForm title="Editar Transação" />
-        </Box>
+        </div>
       </Modal>
 
-      <Dialog
+      <Modal
         open={openDelete}
-        keepMounted
         onClose={() => setOpenDelete(!openDelete)}
-        aria-describedby="alert-dialog-delete-transaction"
+        aria-labelledby="modal-modal-edit"
+        aria-describedby="modal-modal-edit-transaction"
       >
-        <DialogTitle>
-          {`Tem certeza que deseja excluir o(a) ${transaction?.type}?`}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-delete-transaction">
-            Ao confirmar você estará excluindo o(a) {transaction?.type} do dia{" "}
-            {new Date(transaction?.date ?? "").toLocaleDateString("pt-BR")} no
-            valor de R$ {transaction?.value}.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpenDelete(!openDelete)}>Cancelar</Button>
-          <Button onClick={() => setOpenDelete(!openDelete)}>Excluir</Button>
-        </DialogActions>
-      </Dialog>
+        <div
+          className={styles.modal}
+          style={{ backgroundColor: "var(--color-white)" }}
+        >
+          <div className={styles.containerDelete}>
+            <p className={styles.titleDelete}>
+              Tem certeza que deseja excluir o(a) {transaction?.type}?
+            </p>
+            <p className={styles.descriptionDelete}>
+              Ao confirmar você estará excluindo o(a) {transaction?.type} do dia{" "}
+              {new Date(transaction?.date ?? "").toLocaleDateString("pt-BR")} no
+              valor de R$ {transaction?.value}.
+            </p>
+            <div className={styles.buttonDelete}>
+              <Button onClick={() => setOpenDelete(!openDelete)}>
+                Cancelar
+              </Button>
+              <Button onClick={() => setOpenDelete(!openDelete)}>
+                Excluir
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };

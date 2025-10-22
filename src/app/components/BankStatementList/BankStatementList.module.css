@@ -54,3 +54,36 @@
   font-weight: var(--font-weight-sm);
   color: var(--color-black);
 }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500;
+  background-color: var(--background-secondary);
+  border-radius: 8px;
+  padding: 50px;
+}
+
+.containerDelete {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.titleDelete {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-sm);
+}
+
+.descriptionDelete {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-xs);
+}
+
+.buttonDelete {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-self: end;
+}
