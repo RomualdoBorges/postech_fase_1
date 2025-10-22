@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from "./BankStatementList.module.css";
-import ActionButtons, { ButtonsData } from "../ActionButtons";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
@@ -13,6 +12,7 @@ import NewTransactionForm from "../NewTransactionForm";
 import Button from "../Button";
 import { getMonthName } from "@/utils/getMonthName";
 import { useVisibility } from "@/context/VisibilityContext";
+import ActionButtons, { ButtonsData } from "@/components/ActionButtons";
 
 export type BankStatementData = {
   id: number;

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./bank-statement.module.css";
-import Menu from "../components/Menu";
+import Menu from "../../components/Menu";
 import BankStatementList, {
   BankStatementData,
-} from "../components/BankStatementList";
+} from "../../components/BankStatementList";
 import { nav } from "@/utils/navData";
 
 export default function BankStatement() {

@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "@/styles/page.module.css";
-import NewTransaction from "./components/NewTransaction";
-import Menu from "./components/Menu";
+// import NewTransaction from "./components/NewTransaction";
+import Menu from "../components/Menu";
 import { nav } from "@/utils/navData";
-import Balance from "./components/Balance";
 import BankStatementList, {
   BankStatementData,
-} from "./components/BankStatementList";
+} from "../components/BankStatementList";
+import Balance from "@/components/Balance";
+import NewTransaction from "@/components/NewTransaction";
 
 export default function Home() {
   const bankStatementData: BankStatementData[] = [
