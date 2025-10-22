@@ -10,6 +10,9 @@ import Button from "../Button";
 import { type SelectChangeEvent } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+interface NewTransactionFormProps {
+  title?: string;
+}
 const schema = yup.object({
   type: yup
     .number()
@@ -27,7 +30,9 @@ type FormValues = yup.InferType<typeof schema>;
 
 const todayISO = new Date().toISOString().split("T")[0];
 
-const NewTransactionForm: React.FC = () => {
+const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
+  title = "Nova Transação",
+}) => {
   const {
     control,
     handleSubmit,
@@ -51,7 +56,7 @@ const NewTransactionForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.containerForm}>
-      <p className={styles.title}>Nova Transação</p>
+      <p className={styles.title}>{title}</p>
 
       <Controller
         name="type"

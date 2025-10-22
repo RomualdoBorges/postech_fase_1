@@ -1,8 +1,20 @@
-.container {
+.containerList {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
   width: 100%;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+}
+
+.titleStatement {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-lg);
 }
 
 .card {

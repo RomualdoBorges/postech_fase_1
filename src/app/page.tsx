@@ -28,7 +28,6 @@ export default function Home() {
       </section>
 
       <section className={styles.statement}>
-        <p className={styles.titleStatement}>Extrato</p>
         <BankStatementList data={bankStatementData} />
       </section>
     </div>
