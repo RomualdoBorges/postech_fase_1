@@ -60,10 +60,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500;
   background-color: var(--background-secondary);
   border-radius: 8px;
-  padding: 50px;
+  padding: var(--spacing-xxl);
 }
 
 .containerDelete {
@@ -86,4 +85,16 @@
   display: flex;
   gap: var(--spacing-sm);
   align-self: end;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 450px) {
+  .modal {
+    padding: var(--spacing-sm);
+  }
 }
