@@ -1,6 +1,6 @@
 import Link from "next/link";
+import styles from "@/styles/not-found.module.css";
 import Image from "next/image";
-import styles from "./styles/not-found.module.css";
 import Button from "./components/Button";
 
 export default function NotFound() {

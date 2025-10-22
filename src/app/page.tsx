@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/page.module.css";
+import styles from "@/styles/page.module.css";
 import NewTransaction from "./components/NewTransaction";
 import Menu from "./components/Menu";
 import { nav } from "@/utils/navData";
