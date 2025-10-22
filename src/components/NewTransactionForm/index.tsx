@@ -9,9 +9,13 @@ import Input from "../Input";
 import Button from "../Button";
 import { type SelectChangeEvent } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { BankStatementData } from "../BankStatementList";
+import { useRouter } from "next/navigation";
 
 interface NewTransactionFormProps {
   title?: string;
+  fetchData?: "post" | "put";
+  putData?: BankStatementData | null;
 }
 const schema = yup.object({
   type: yup
@@ -32,11 +36,16 @@ const todayISO = new Date().toISOString().split("T")[0];
 
 const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
   title = "Nova Transação",
+  fetchData = "post",
+  putData,
 }) => {
+  const router = useRouter();
+
   const {
     control,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -49,8 +58,63 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
     reValidateMode: "onChange",
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log("submit:", data);
+  React.useEffect(() => {
+    if (fetchData === "put" && putData) {
+      setValue("type", putData?.type);
+      setValue("date", putData.date);
+      setValue("value", putData.value);
+    } else {
+      reset();
+    }
+  }, [putData, setValue, fetchData, reset]);
+
+  async function postTransaction(item: {
+    type: number;
+    value: number;
+    date: string;
+  }) {
+    const res = await fetch("/api/transactions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    });
+
+    if (!res.ok) throw new Error("Erro ao criar transação");
+    const data = await res.json();
+    return data.transaction;
+  }
+
+  async function putTransaction(item: {
+    id: number;
+    type: number;
+    value: number;
+    date: string;
+  }) {
+    const res = await fetch("/api/transactions", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    });
+
+    if (!res.ok) throw new Error("Erro ao atualziar transação");
+    const data = await res.json();
+    return data.transaction;
+  }
+
+  const onSubmit = (form: FormValues) => {
+    if (fetchData === "post") {
+      console.log("post:", form);
+      postTransaction(form);
+      // TODO: fazer POST aqui
+    } else if (putData) {
+      console.log("put:", form);
+      putTransaction({ id: putData.id, ...form }); // AGORA vai com id
+    }
+    router.refresh();
     reset();
   };
 

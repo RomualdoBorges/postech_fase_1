@@ -2,19 +2,17 @@ import React from "react";
 import styles from "@/styles/page.module.css";
 import Menu from "../components/Menu";
 import { nav } from "@/utils/navData";
-import BankStatementList, {
-  BankStatementData,
-} from "../components/BankStatementList";
+import BankStatementList from "../components/BankStatementList";
 import Balance from "@/components/Balance";
 import NewTransaction from "@/components/NewTransaction";
+import { getRecentTransactions } from "@/utils/getRecentTransactions";
 
-export default function Home() {
-  const bankStatementData: BankStatementData[] = [
-    { id: 0, date: "2022-10-18", type: 1, value: 150 },
-    { id: 1, date: "2022-11-21", type: 1, value: 100 },
-    { id: 2, date: "2022-11-21", type: 1, value: 50 },
-    { id: 3, date: "2022-12-21", type: 2, value: 500 },
-  ];
+export default async function Home() {
+  const res = await fetch("http://localhost:3000/api/transactions", {
+    cache: "no-store",
+  });
+  const { user, transaction } = await res.json();
+  const recentTransaction = getRecentTransactions(transaction, 4);
 
   return (
     <div className={styles.container}>
@@ -23,12 +21,12 @@ export default function Home() {
       </section>
 
       <section className={styles.cardsCenter}>
-        <Balance nickname="Joana" balance={2500} />
+        <Balance nickname={user[0].nickname} balance={user[0].balance} />
         <NewTransaction />
       </section>
 
       <section className={styles.statement}>
-        <BankStatementList data={bankStatementData} />
+        <BankStatementList data={recentTransaction} />
       </section>
     </div>
   );

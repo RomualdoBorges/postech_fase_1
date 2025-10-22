@@ -14,6 +14,7 @@ import { getMonthName } from "@/utils/getMonthName";
 import { useVisibility } from "@/context/VisibilityContext";
 import ActionButtons, { ButtonsData } from "@/components/ActionButtons";
 import { getTypeTransaction } from "@/utils/getTypeTransaction";
+import { useRouter } from "next/navigation";
 
 export type BankStatementData = {
   id: number;
@@ -31,6 +32,8 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
   data,
   buttons = false,
 }) => {
+  const router = useRouter();
+
   const { visibility, setVisibility } = useVisibility();
   const [openNew, setOpenNew] = React.useState<boolean>(false);
   const [openEdit, setOpenEdit] = React.useState<boolean>(false);
@@ -52,13 +55,30 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
     },
   ];
 
-  function handleClickAction(item: BankStatementData, button: ButtonsData) {
+  async function deleteTransaction(id: number) {
+    const res = await fetch("/api/transactions", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+
+    if (!res.ok) throw new Error("Erro ao excluir transação");
+    const data = await res.json();
+    setOpenDelete(!openDelete);
+    router.refresh();
+    console.log(data.message);
+  }
+
+  async function handleClickAction(
+    item: BankStatementData,
+    button: ButtonsData
+  ) {
     if (button.title === "Editar") {
       setOpenEdit(true);
-      console.log("Editar", item);
     } else {
       setOpenDelete(true);
-      console.log("Excluir", item);
     }
     setTransaction(item);
   }
@@ -133,7 +153,11 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
         aria-describedby="modal-modal-edit-transaction"
       >
         <div className={styles.modal}>
-          <NewTransactionForm title="Editar Transação" />
+          <NewTransactionForm
+            title="Editar Transação"
+            fetchData="put"
+            putData={transaction}
+          />
         </div>
       </Modal>
 
@@ -160,7 +184,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
               <Button onClick={() => setOpenDelete(!openDelete)}>
                 Cancelar
               </Button>
-              <Button onClick={() => setOpenDelete(!openDelete)}>
+              <Button onClick={() => deleteTransaction(transaction?.id ?? 0)}>
                 Excluir
               </Button>
             </div>
