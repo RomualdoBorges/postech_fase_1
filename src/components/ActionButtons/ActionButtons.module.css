@@ -1,3 +1,4 @@
+/* Centraliza o grupo de botoes horizontalmente e alinha verticalmente*/
 .container {
   display: flex;
   align-items: center;
