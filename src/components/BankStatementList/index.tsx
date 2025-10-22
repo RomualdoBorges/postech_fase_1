@@ -71,10 +71,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
     console.log(data.message);
   }
 
-  async function handleClickAction(
-    item: BankStatementData,
-    button: ButtonsData
-  ) {
+  function handleClickAction(item: BankStatementData, button: ButtonsData) {
     if (button.title === "Editar") {
       setOpenEdit(true);
     } else {

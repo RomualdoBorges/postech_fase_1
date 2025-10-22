@@ -9,7 +9,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { nav } from "@/utils/navData";
 import Menu from "../Menu";
 
-const AppBar: React.FC = () => {
+interface AppBarProps {
+  name: string;
+}
+
+const AppBar: React.FC<AppBarProps> = ({ name }) => {
   const [open, setOpen] = React.useState<boolean>(false);
 
   function handleClick() {
@@ -26,7 +30,7 @@ const AppBar: React.FC = () => {
         </div>
 
         <div className={styles.user}>
-          <p>Joana da Silva Oliveira</p>
+          <p>{name}</p>
           <IconButton>
             <AccountCircle fontSize="large" />
           </IconButton>

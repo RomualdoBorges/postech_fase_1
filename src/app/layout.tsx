@@ -16,15 +16,19 @@ export const metadata: Metadata = {
     "O ByteBank é um sistema bancário simples desenvolvido para simular operações financeiras essenciais de uma conta digital. Ele permite realizar visualizar saldo da conta corrente e informações sobre transações (extrato, e novas transações).",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const res = await fetch("http://localhost:3000/api/transactions", {
+    cache: "no-store",
+  });
+  const { user } = await res.json();
   return (
     <html lang="pt-br">
       <body className={`${inter.variable}  antialiased`}>
-        <AppBar />
+        <AppBar name={user[0].name} />
         <VisibilityProvider>
           <main>{children}</main>
         </VisibilityProvider>
