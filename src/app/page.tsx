@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "@/styles/page.module.css";
-// import NewTransaction from "./components/NewTransaction";
 import Menu from "../components/Menu";
 import { nav } from "@/utils/navData";
 import BankStatementList, {
@@ -11,10 +10,10 @@ import NewTransaction from "@/components/NewTransaction";
 
 export default function Home() {
   const bankStatementData: BankStatementData[] = [
-    { id: 0, date: "2022-10-18", type: "Depósito", value: 150 },
-    { id: 1, date: "2022-11-21", type: "Depósito", value: 100 },
-    { id: 2, date: "2022-11-21", type: "Depósito", value: 50 },
-    { id: 3, date: "2022-12-21", type: "Transferência", value: -500 },
+    { id: 0, date: "2022-10-18", type: 1, value: 150 },
+    { id: 1, date: "2022-11-21", type: 1, value: 100 },
+    { id: 2, date: "2022-11-21", type: 1, value: 50 },
+    { id: 3, date: "2022-12-21", type: 2, value: 500 },
   ];
 
   return (
@@ -24,7 +23,7 @@ export default function Home() {
       </section>
 
       <section className={styles.cardsCenter}>
-        <Balance />
+        <Balance nickname="Joana" balance={2500} />
         <NewTransaction />
       </section>
 

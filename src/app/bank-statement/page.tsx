@@ -8,21 +8,21 @@ import { nav } from "@/utils/navData";
 
 export default function BankStatement() {
   const bankStatementData: BankStatementData[] = [
-    { id: 0, date: "2022-10-18", type: "Depósito", value: 150 },
-    { id: 1, date: "2022-11-21", type: "Depósito", value: 100 },
-    { id: 2, date: "2022-11-21", type: "Depósito", value: 50 },
-    { id: 3, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 4, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 5, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 6, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 7, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 8, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 9, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 10, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 11, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 12, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 13, date: "2022-12-21", type: "Transferência", value: -500 },
-    { id: 14, date: "2022-12-21", type: "Transferência", value: -500 },
+    { id: 0, date: "2022-10-18", type: 1, value: 150 },
+    { id: 1, date: "2022-11-21", type: 1, value: 100 },
+    { id: 2, date: "2022-11-21", type: 1, value: 50 },
+    { id: 3, date: "2022-12-21", type: 2, value: 500 },
+    { id: 4, date: "2022-12-21", type: 2, value: 500 },
+    { id: 5, date: "2022-12-21", type: 2, value: 500 },
+    { id: 6, date: "2022-12-21", type: 2, value: 500 },
+    { id: 7, date: "2022-12-21", type: 2, value: 500 },
+    { id: 8, date: "2022-12-21", type: 2, value: 500 },
+    { id: 9, date: "2022-12-21", type: 2, value: 500 },
+    { id: 10, date: "2022-12-21", type: 2, value: 500 },
+    { id: 11, date: "2022-12-21", type: 2, value: 500 },
+    { id: 12, date: "2022-12-21", type: 2, value: 500 },
+    { id: 13, date: "2022-12-21", type: 2, value: 500 },
+    { id: 14, date: "2022-12-21", type: 2, value: 500 },
   ];
 
   return (

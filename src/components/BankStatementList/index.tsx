@@ -13,11 +13,12 @@ import Button from "../Button";
 import { getMonthName } from "@/utils/getMonthName";
 import { useVisibility } from "@/context/VisibilityContext";
 import ActionButtons, { ButtonsData } from "@/components/ActionButtons";
+import { getTypeTransaction } from "@/utils/getTypeTransaction";
 
 export type BankStatementData = {
   id: number;
   date: string;
-  type: string;
+  type: number;
   value: number;
 };
 
@@ -92,7 +93,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
                 {month.charAt(0).toUpperCase() + month.slice(1)}
               </p>
               <div className={styles.typeDate}>
-                <p>{item.type}</p>
+                <p>{getTypeTransaction(item.type)}</p>
                 <p>{dateEdit}</p>
                 {buttons && (
                   <ActionButtons
@@ -102,7 +103,12 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
                 )}
               </div>
               <p className={styles.value}>{`R$ ${
-                visibility ? item.value : "***"
+                visibility
+                  ? item.value.toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })
+                  : "***"
               }`}</p>
             </div>
           );

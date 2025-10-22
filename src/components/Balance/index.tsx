@@ -18,7 +18,12 @@ type ImageData = {
   className: string;
 };
 
-const Balance: React.FC = () => {
+interface BalanceProps {
+  nickname: string;
+  balance: number;
+}
+
+const Balance: React.FC<BalanceProps> = ({ nickname, balance }) => {
   const { visibility, setVisibility } = useVisibility();
 
   const imageListBalance: ImageData[] = [
@@ -55,7 +60,7 @@ const Balance: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <p>Olá, Joana! :)</p>
+        <p>Olá, {nickname}! :)</p>
         <p>{getFormattedDate()}</p>
       </div>
 
@@ -74,7 +79,14 @@ const Balance: React.FC = () => {
 
         <div className={styles.balance}>
           <p>Conta Corrente</p>
-          <p>{`R$ ${visibility ? "2.500,00" : "***"}`}</p>
+          <p>{`R$ ${
+            visibility
+              ? balance.toLocaleString("pt-BR", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
+              : "***"
+          }`}</p>
         </div>
       </div>
 
