@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./bank-statement.module.css";
-import { nav } from "../utils/navData";
 import Menu from "../components/Menu";
 import BankStatementList, {
   BankStatementData,
 } from "../components/BankStatementList";
+import { nav } from "@/utils/navData";
 
 export default function BankStatement() {
   const bankStatementData: BankStatementData[] = [

@@ -6,8 +6,8 @@ import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Menu from "../Menu";
-import { nav } from "@/app/utils/navData";
 import CloseIcon from "@mui/icons-material/Close";
+import { nav } from "@/utils/navData";
 
 const AppBar: React.FC = () => {
   const [open, setOpen] = React.useState<boolean>(false);

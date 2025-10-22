@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./styles/reset.css";
 import "./styles/global.css";
 import AppBar from "./components/AppBar";
+import { VisibilityProvider } from "@/context/VisibilityContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,9 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${inter.variable}  antialiased`}>
         <AppBar />
-        <main>{children}</main>
+        <VisibilityProvider>
+          <main>{children}</main>
+        </VisibilityProvider>
         <footer></footer>
       </body>
     </html>

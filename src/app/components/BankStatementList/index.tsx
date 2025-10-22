@@ -2,14 +2,17 @@
 
 import React from "react";
 import styles from "./BankStatementList.module.css";
-import { getMonthName } from "@/app/utils/getMonthName";
 import ActionButtons, { ButtonsData } from "../ActionButtons";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Modal } from "@mui/material";
 import NewTransactionForm from "../NewTransactionForm";
 import Button from "../Button";
+import { getMonthName } from "@/utils/getMonthName";
+import { useVisibility } from "@/context/VisibilityContext";
 
 export type BankStatementData = {
   id: number;
@@ -27,6 +30,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
   data,
   buttons = false,
 }) => {
+  const { visibility, setVisibility } = useVisibility();
   const [openNew, setOpenNew] = React.useState<boolean>(false);
   const [openEdit, setOpenEdit] = React.useState<boolean>(false);
   const [openDelete, setOpenDelete] = React.useState<boolean>(false);
@@ -40,6 +44,11 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
 
   const buttonsTitle: ButtonsData[] = [
     { id: 0, title: "Adicionar nova", icon: <AddIcon /> },
+    {
+      id: 1,
+      title: visibility ? "Esconder saldo" : "Mostrar Saldo",
+      icon: visibility ? <VisibilityIcon /> : <VisibilityOffIcon />,
+    },
   ];
 
   function handleClickAction(item: BankStatementData, button: ButtonsData) {
@@ -53,6 +62,14 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
     setTransaction(item);
   }
 
+  function handleClick(button: ButtonsData) {
+    if (button.title === "Adicionar nova") {
+      setOpenNew(!openNew);
+    } else {
+      setVisibility(!visibility);
+    }
+  }
+
   return (
     <>
       <div className={styles.titleContainer}>
@@ -60,7 +77,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
         {buttons && (
           <ActionButtons
             data={buttonsTitle}
-            onClick={() => setOpenNew(!openNew)}
+            onClick={(btn) => handleClick(btn)}
           />
         )}
       </div>
@@ -84,7 +101,9 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
                   />
                 )}
               </div>
-              <p className={styles.value}>{`R$ ${item.value}`}</p>
+              <p className={styles.value}>{`R$ ${
+                visibility ? item.value : "***"
+              }`}</p>
             </div>
           );
         })}

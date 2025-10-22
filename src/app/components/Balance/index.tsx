@@ -5,8 +5,9 @@ import styles from "./Balance.module.css";
 import { IconButton, Tooltip } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { getFormattedDate } from "@/app/utils/getFormattedDate";
 import Image from "next/image";
+import { getFormattedDate } from "@/utils/getFormattedDate";
+import { useVisibility } from "@/context/VisibilityContext";
 
 type ImageData = {
   id: number;
@@ -18,7 +19,7 @@ type ImageData = {
 };
 
 const Balance: React.FC = () => {
-  const [visibility, setVisibility] = React.useState<boolean>(true);
+  const { visibility, setVisibility } = useVisibility();
 
   const imageListBalance: ImageData[] = [
     {
