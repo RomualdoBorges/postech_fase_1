@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import Balance from './index';
 
 const meta = {
-  title: 'Components/Balance',
+  title: 'Pages/Balance',
   component: Balance,
   parameters: {
     layout: 'centered',

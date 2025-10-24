@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import NewTransaction from './index';
 
 const meta = {
-  title: 'Components/Nova Transação',
+  title: 'Pages/Nova Transação',
   component: NewTransaction,
   parameters: {
     layout: 'centered',
