@@ -139,7 +139,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
         aria-describedby="modal-modal-new-transaction"
       >
         <div className={styles.modal}>
-          <NewTransactionForm />
+          <NewTransactionForm onClose={() => setOpenNew(false)} />
         </div>
       </Modal>
 

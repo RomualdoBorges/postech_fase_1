@@ -16,6 +16,7 @@ interface NewTransactionFormProps {
   title?: string;
   fetchData?: "post" | "put";
   putData?: BankStatementData | null;
+  onClose?: () => void;
 }
 const schema = yup.object({
   type: yup
@@ -38,6 +39,7 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
   title = "Nova Transação",
   fetchData = "post",
   putData,
+  onClose
 }) => {
   const router = useRouter();
 
@@ -194,7 +196,7 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
         )}
       />
 
-      <Button style={{ width: "280px", marginTop: "32px" }} type="submit">
+      <Button style={{ width: "280px", marginTop: "32px" }} type="button" onClick={onClose}>
         concluir transação
       </Button>
     </form>
