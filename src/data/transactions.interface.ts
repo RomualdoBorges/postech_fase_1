@@ -4,15 +4,15 @@ export type ApiData = {
 };
 
 export type User = {
-  id: 0,
-  name: "Joana da Silva Oliveira",
-  nickname: "Joana",
-  balance: 3472.75
+  id: number,
+  name: string,
+  nickname: string,
+  balance: number
 }
 
 export type Transaction = { 
-  id: 0,
-  date: "2025-01-03",
-  type: 1,
-  value: 961.0
+  id: number,
+  date: string,
+  type: number,
+  value: number
 }
