@@ -1,0 +1,131 @@
+.container {
+  position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg) 103px 187px var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomImage,
+.topImage,
+.imagePig {
+  display: none;
+}
+
+.title p {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-xs);
+}
+
+.title p:first-child {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.balanceContainer {
+  align-self: flex-end;
+}
+
+.visibility {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-tertiary);
+  padding-bottom: var(--spacing-md);
+}
+
+.visibility p {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-sm);
+}
+
+.visibility svg {
+  color: var(--color-tertiary);
+}
+
+.balance p:first-child {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
+  margin-top: var(--spacing-md);
+}
+
+.balance p:last-child {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-xs);
+  margin-top: var(--spacing-xs);
+  min-width: 179.94px;
+}
+
+@media (max-width: 900px) {
+  .visibility {
+    border-color: var(--color-white);
+  }
+
+  .visibility svg {
+    color: var(--color-white);
+  }
+
+  .bottomImage,
+  .topImage,
+  .imagePig {
+    display: block;
+  }
+
+  .bottomImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .topImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  .imagePig {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding-bottom: 300px;
+    padding-right: var(--spacing-lg);
+  }
+
+  .balanceContainer,
+  .title {
+    align-self: center;
+    width: 100%;
+  }
+
+  .title p {
+    margin-bottom: var(--spacing-xxl);
+  }
+
+  .bottomImage {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+
+  .topImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+  .imagePig {
+    left: 14.5px;
+    z-index: 2000;
+  }
+}

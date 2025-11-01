@@ -1,0 +1,18 @@
+.containerForm {
+  display: grid;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-lg);
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xl);
+  z-index: 1000;
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-sm);
+  color: var(--color-white);
+  margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+}

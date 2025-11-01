@@ -1,0 +1,6 @@
+/* Centraliza o grupo de botoes horizontalmente e alinha verticalmente*/
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
