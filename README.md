@@ -82,6 +82,7 @@ http://localhost:3000
 - `npm run build` - Gera a build de produção
 - `npm run start` - Executa a aplicação em modo produção
 - `npm run lint` - Executa o ESLint para verificar o código
+- `npm run storybook` - Inicia o servidor do Storybook e o abre no navegador
 
 ## Ambiente de Produção
 

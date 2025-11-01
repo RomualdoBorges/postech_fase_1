@@ -4,6 +4,7 @@ import "@/styles/reset.css";
 import "@/styles/global.css";
 import { VisibilityProvider } from "@/context/VisibilityContext";
 import AppBar from "@/components/AppBar";
+import { ApiData } from "@/data/transactions.interface";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ export default async function RootLayout({
   const res = await fetch("http://localhost:3000/api/transactions", {
     cache: "no-store",
   });
-  const { user } = await res.json();
+  const { user } = await res.json() as ApiData;
   return (
     <html lang="pt-br">
       <body className={`${inter.variable}  antialiased`}>

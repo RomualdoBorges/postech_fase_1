@@ -30,6 +30,9 @@
 
   /* border  */
   --border-radius: 8px;
+
+  /* width  */
+  --min-width-container: 250px;
 }
 
 body {

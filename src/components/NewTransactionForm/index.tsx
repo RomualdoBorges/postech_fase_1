@@ -16,6 +16,7 @@ interface NewTransactionFormProps {
   title?: string;
   fetchData?: "post" | "put";
   putData?: BankStatementData | null;
+  onClose?: () => void;
 }
 const schema = yup.object({
   type: yup
@@ -38,6 +39,7 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
   title = "Nova Transação",
   fetchData = "post",
   putData,
+  onClose
 }) => {
   const router = useRouter();
 
@@ -114,9 +116,14 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
       console.log("put:", form);
       putTransaction({ id: putData.id, ...form }); // AGORA vai com id
     }
+    if (onClose) {
+      onClose()
+    }
     router.refresh();
     reset();
   };
+
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.containerForm}>
