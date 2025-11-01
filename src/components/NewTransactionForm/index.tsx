@@ -116,9 +116,14 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
       console.log("put:", form);
       putTransaction({ id: putData.id, ...form }); // AGORA vai com id
     }
+    if (onClose) {
+      onClose()
+    }
     router.refresh();
     reset();
   };
+
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.containerForm}>
@@ -196,7 +201,7 @@ const NewTransactionForm: React.FC<NewTransactionFormProps> = ({
         )}
       />
 
-      <Button style={{ width: "280px", marginTop: "32px" }} type="button" onClick={onClose}>
+      <Button style={{ width: "280px", marginTop: "32px" }} type="submit">
         concluir transação
       </Button>
     </form>

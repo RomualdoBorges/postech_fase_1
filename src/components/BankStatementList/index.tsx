@@ -103,7 +103,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
 
         <div className={styles.containerList}>
           {data.map((item) => {
-            const dateEdit = new Date(item.date).toLocaleDateString("pt-BR");
+            const dateEdit = new Date(item.date + 'T00:00:00').toLocaleDateString("pt-BR");
             const month = getMonthName(dateEdit);
             return (
               <div key={item.id} className={styles.card}>
