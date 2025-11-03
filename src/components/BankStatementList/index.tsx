@@ -151,7 +151,7 @@ const BankStatementList: React.FC<BankStatementListProps> = ({
           aria-describedby="modal-modal-edit-transaction"
         >
           <div className={styles.modal}>
-            <NewTransactionForm onClose={() => setOpenNew(false)}
+            <NewTransactionForm onClose={() => setOpenEdit(false)}
               title="Editar Transação"
               fetchData="put"
               putData={transaction}
